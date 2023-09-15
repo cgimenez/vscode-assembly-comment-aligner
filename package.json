@@ -1,0 +1,64 @@
+{
+  "name": "org-cg-comments-aligner",
+  "displayName": "Assembly comments aligner",
+  "description": "",
+  "version": "0.0.1",
+  "publisher": "Christophe Gimenez",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Assembly comments aligner",
+      "properties": {
+          "org-cg-comments-aligner.comment_symbol": {
+            "type": "string",
+            "default": ";",
+            "description": "The comment symbol"
+          },
+          "org-cg-comments-aligner.column": {
+              "type": "number",
+              "default": 40,
+              "description": "Column to put aligned comment"
+          },
+          "org-cg-comments-aligner.align_onsave": {
+              "type":"boolean",
+              "default": true,
+              "description": "Align comments on save [reload needed]"
+          },
+          "org-cg-comments-aligner.languages": {
+              "type": "array",
+              "default": ["ca65"],
+              "items": {
+                "type":"string"
+              },
+              "description": "Languages used when on save is activated"
+          }
+      }
+    },
+    "commands": [{
+      "command": "org-cg-comments-aligner.align",
+      "title": "Assembler comment aligner"
+    }]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.82.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4"
+  }
+}
