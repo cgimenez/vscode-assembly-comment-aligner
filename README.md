@@ -1,4 +1,4 @@
-# Assembler comments aligner
+# VS Code Assembler comments aligner
 
 A quick and dirty extension for align comments on specific columns when editing assembly files (eg. ca65)
 Be warn that using this extension to any file without prior trying it with auto save disabled might lead to unpredictable results.
